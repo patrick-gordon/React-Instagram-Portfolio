@@ -1,26 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from './components/SearchBar/SearchBar';
+import PostContainer from './components/PostContainer/PostContainer';
+import dummyData from './dummyData';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+ state = {
+     data: [],
+     search: '',
+     filteredPosts: []
+   }
+
+   changeHandler = e => {
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+}
+ 
+
+ componentDidMount(){
+    this.setState({ data: dummyData})
+ }
+
+ searchFilter = e => {
+    const filtered = this.state.data.filter(post => post.username.toLowerCase().includes(e.target.value.toLowerCase()))
+    this.setState({ filteredPosts: filtered})
+ }
+    
+ 
+
+  render() {
+    return (
+      <div className="App">
+        <SearchBar 
+        newSearch={this.state.search}
+        searchFilter={this.searchFilter}
+        />
+        <PostContainer 
+        data={this.state.data}
+        filteredPosts={this.state.filteredPosts}
+        searchFilter={this.searchFilter}
+         />
+      </div>
+    )
+  }
 }
 
 export default App;
