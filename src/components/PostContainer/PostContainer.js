@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CommentSection from '../CommentSection/CommentSection';
+import './PostContainer.css';
 
 class PostContainer extends Component {
 
@@ -15,6 +16,12 @@ class PostContainer extends Component {
                             </header>
 
                             <img src={post.imageUrl} alt='main-image' />
+
+                            <div className='icons'>
+                                <i className="fas fa-heart" onClick></i>
+                                <i className="far fa-comment"></i>
+                            </div>
+                            
 
                             <section className='likes'>
                                 {post.likes} likes
@@ -35,6 +42,8 @@ class PostContainer extends Component {
                             </header>
 
                             <img src={post.imageUrl} alt='main-image' />
+
+                           
 
                             <section className='likes'>
                                 {post.likes} likes
