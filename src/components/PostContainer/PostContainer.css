@@ -1,7 +1,18 @@
 .post-container{
-    width: 100%;
-    border: 1px solid black;
+    width: 50%;
+    /* border: 1px solid black; */
+    
 }
 header{
-    
+    display: flex;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+.main-img{
+    width: fit-content;
+    border: 1px solid black;
+}
+.icons{
+    margin-right:10px;
 }

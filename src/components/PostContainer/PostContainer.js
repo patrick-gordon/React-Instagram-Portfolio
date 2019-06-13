@@ -14,9 +14,9 @@ class PostContainer extends Component {
                                 <img src={post.thumbnailUrl} alt='profile-pic' />
                                 <h3>{post.username}</h3>
                             </header>
-
+                            <div className='main-img'>
                             <img src={post.imageUrl} alt='main-image' />
-
+                            </div>
                             <div className='icons'>
                                 <i className="fas fa-heart" onClick></i>
                                 <i className="far fa-comment"></i>

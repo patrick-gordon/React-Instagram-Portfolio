@@ -23,7 +23,7 @@ class CommentSection extends Component {
     }
     render() {
         return (
-            <div className='commnet-section'>
+            <div className='comment-section'>
                 {this.state.comments.map(comment => {
                     return (
                         <>

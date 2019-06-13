@@ -1,5 +1,33 @@
 import React from 'react';
-import './SearchBar.css';
+
+import styled from 'styled-components';
+
+const NavBar = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+`;
+
+const NavLeft = styled.div`
+    display: flex;
+`;
+
+const InstagramLogo = styled.i` 
+    padding-right: 10px;
+    margin-top: 5px;
+    font-weight: 500;
+`;
+
+const LogoText = styled.div`
+    border-left: .5px solid black;
+    padding-left: 10px;
+`;
+
+const NavcenterInput = styled.input`
+    text-align: center;
+    font-size:12px;
+`;
+
 
 
 class SearchBar extends React.Component {
@@ -12,10 +40,10 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div className='searchbar'>
+           <NavBar>
                 <div className='left'>
-                    <i className="fab fa-instagram fa-2x"></i>
-                    <p>| Instagram</p>
+                    <InstagramLogo className="fab fa-instagram"  />
+                    <LogoText> Instagram </LogoText>
                 </div>
                 <input
                     name='search'
@@ -24,11 +52,14 @@ class SearchBar extends React.Component {
                     type='text'
                 />
                 <div className='right'>
-                    <i className='far fa-compass fa-2x'></i>
-                    <i className="fas fa-heart fa-2x"></i>
-                    <i className="fas fa-user fa-2x"></i>
+                    <i className="far fa-compass"></i>
+                    <i className="fas fa-heart "></i>
+                    <i className="fas fa-user "></i>
                 </div>
-            </div >
+                
+            </NavBar >
+            
+            
         )
     }
 }
