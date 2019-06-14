@@ -1,6 +1,51 @@
 import React, { Component } from 'react'
 import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.css';
+import styled from 'styled-components';
+
+const Header = styled.div`
+    display: flex;
+    text-align: center;
+    margin-left: 10px;
+    padding: 10px 10px
+`;
+
+const UserNameImg = styled.img`
+    height: 35px;
+    width: 35px
+    border-radius: 50%;
+`;
+
+const UserName = styled.p`
+   padding-top: 8px;
+   margin-left: 10px;
+   font-weight: 600;
+   font-size: 20px;
+
+`;
+
+const MainImg = styled.div`
+    
+`;
+
+const IconsWrapper = styled.div`
+    display: flex;
+    margin-bottom: 10px;
+`;
+
+const Heart = styled.i`
+    margin-right: 20px;
+    margin-left: 10px;
+`;
+
+const Main = styled.img`
+    width: 100%
+`;
+
+const Likes = styled.div`
+    font-weight: 600;
+    margin-left: 10px;
+`;
 
 class PostContainer extends Component {
 
@@ -10,22 +55,22 @@ class PostContainer extends Component {
                 {this.props.filteredPosts.length === 0 ? this.props.data.map(post => {
                     return (
                         <>
-                            <header>
-                                <img src={post.thumbnailUrl} alt='profile-pic' />
-                                <h3>{post.username}</h3>
-                            </header>
-                            <div className='main-img'>
-                            <img src={post.imageUrl} alt='main-image' />
-                            </div>
-                            <div className='icons'>
-                                <i className="fas fa-heart" onClick></i>
-                                <i className="far fa-comment"></i>
-                            </div>
+                            <Header>
+                                <UserNameImg src={post.thumbnailUrl} alt='profile-pic' />
+                                <UserName>{post.username}</UserName>
+                            </Header>
+                            <MainImg>
+                                <Main src={post.imageUrl} alt='main-image' />
+                            </MainImg>
+                            <IconsWrapper>
+                                <Heart className="fas fa-heart fa-2x" ></Heart>
+                                <i className="far fa-comment fa-2x"></i>
+                            </IconsWrapper>
                             
 
-                            <section className='likes'>
+                            <Likes>
                                 {post.likes} likes
-                             </section>
+                             </Likes>
 
                             <CommentSection
                                 comments={post.comments}
@@ -36,12 +81,18 @@ class PostContainer extends Component {
                 }) : this.props.filteredPosts.map(post => {
                     return (
                         <>
-                            <header>
+                            <Header>
                                 <img src={post.thumbnailUrl} alt='profile-pic' />
                                 <h3>{post.username}</h3>
-                            </header>
+                            </Header>
 
-                            <img src={post.imageUrl} alt='main-image' />
+                            <Main src={post.imageUrl} alt='main-image' />
+
+                            <IconsWrapper>
+                                <Heart className="fas fa-heart fa-2x" ></Heart>
+                                <i className="far fa-comment fa-2x"></i>
+                            </IconsWrapper>
+                            
 
                            
 
@@ -51,7 +102,8 @@ class PostContainer extends Component {
 
                             <CommentSection
                                 comments={post.comments}
-                                timestamp={post.timestamp} />
+                                timestamp={post.timestamp} 
+                            />
                         </>
                     )
                 }

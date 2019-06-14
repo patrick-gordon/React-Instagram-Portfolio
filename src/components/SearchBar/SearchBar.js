@@ -1,17 +1,21 @@
 import React from 'react';
-import './SearchBar.css';
+
 import styled from 'styled-components';
 
 const NavBar = styled.div`
-    // display: flex;
-    // justify-content: space-between;
-    // margin-top: 10px;
-    // margin: 0 auto;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 0px;
+     margin: 0 auto;
+     border-bottom: 1px solid black;
+     padding-top: 20px;
+     padding-bottom: 20px;
     
 `;
 
 const NavLeft = styled.div`
     display: flex;
+    text: 20px;
 `;
 
 const InstagramLogo = styled.i` 
@@ -21,13 +25,15 @@ const InstagramLogo = styled.i`
 `;
 
 const LogoText = styled.div`
+    font-family: apple chancery, cursive;
+    font-size: 25px;
     border-left: .5px solid black;
     padding-left: 10px;
 `;
 
 const NavcenterInput = styled.input`
     text-align: center;
-    font-size:15px;
+    font-size:20px;
 `;
 
 const NavRight = styled.i`
@@ -46,22 +52,22 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-           <NavBar className='nav-bar'>
+           <NavBar >
                 <NavLeft>
-                    <InstagramLogo className="fab fa-instagram"  />
+                    <InstagramLogo className="fab fa-instagram fa-2x" />
                     <LogoText> Instagram </LogoText>
                 </NavLeft>
-                <input
+                <NavcenterInput
                     name='search'
                     onChange={this.props.searchFilter}
-                    placeholder='search...'
+                    placeholder=' search...'
                     type='text'
                 />
-                <div className='right'>
-                    <i className="far fa-compass"></i>
-                    <i className="fas fa-heart "></i>
-                    <i className="fas fa-user "></i>
-                </div>
+                <NavRight>
+                    <i className="far fa-compass fa-2x"></i>
+                    <i className="fas fa-heart fa-2x"></i>
+                    <i className="fas fa-user  fa-2x"></i>
+                </NavRight>
                 
             </NavBar >
             

@@ -1,6 +1,35 @@
 import React, { Component } from 'react'
 import './CommentSection.css';
+import styled from 'styled-components';
 
+const CommentsWrapper = styled.div`
+    display: flex;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 10px;
+`;
+const UserName = styled.h3`
+    font-size: 30px;
+    font-weight: 550
+`;
+const Comments = styled.p`
+    margin-left: 9px;
+    padding-top: 7px;
+    font-size: 20px;
+`;
+
+const TimeStamp = styled.p`
+    margin-top: 10px;
+    font-size: 13px;
+    margin-left: 10px;
+`;
+
+const CommentInput = styled.form`
+    border-top: 1px solid grey;
+    width: 100%;
+    padding: 10px 10px;
+    border-bottom: 2px solid black;
+`;
 class CommentSection extends Component {
     state = {
         comments: this.props.comments,
@@ -26,15 +55,15 @@ class CommentSection extends Component {
             <div className='comment-section'>
                 {this.state.comments.map(comment => {
                     return (
-                        <>
-                            <h3>{comment.username}</h3>
-                            <p>{comment.text}</p>
-                        </>
+                        <CommentsWrapper>
+                            <UserName>{comment.username}</UserName>
+                            <Comments>{comment.text}</Comments>
+                        </CommentsWrapper>
                     )
                 })}
 
-                <p className='timestamp'>{this.props.timestamp}</p>
-                <form onSubmit={this.addNewComment}>
+                <TimeStamp className='timestamp'>{this.props.timestamp}</TimeStamp>
+                <CommentInput onSubmit={this.addNewComment}>
                     <input
                         name='newComment'
                         onChange={this.changeHandler}
@@ -42,7 +71,7 @@ class CommentSection extends Component {
                         type='text'
                         value={this.state.newComment}
                     />
-                </form>
+                </CommentInput>
             </div>
         )
     }
