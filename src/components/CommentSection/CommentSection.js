@@ -37,7 +37,7 @@ const Input = styled.input`
     width: 100%;
     height:100%;
     border: none;
-    
+    text-align: center;
 `;
 class CommentSection extends Component {
     state = {
@@ -72,6 +72,7 @@ class CommentSection extends Component {
                 })}
 
                 <TimeStamp className='timestamp'>{this.props.timestamp}</TimeStamp>
+
                 <CommentInput onSubmit={this.addNewComment}>
                     <Input
                         name='newComment'

@@ -10,7 +10,6 @@ const NavBar = styled.div`
      border-bottom: 1px solid black;
      padding-top: 20px;
      padding-bottom: 20px;
-    
 `;
 
 const NavLeft = styled.div`
@@ -42,7 +41,6 @@ const NavRight = styled.i`
    }
 
 `;
-
 
 class SearchBar extends React.Component {
 

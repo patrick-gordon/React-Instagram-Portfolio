@@ -17,7 +17,6 @@ class App extends React.Component {
     })
 }
  
-
  componentDidMount(){
     this.setState({ data: dummyData})
  }
@@ -27,8 +26,6 @@ class App extends React.Component {
     this.setState({ filteredPosts: filtered})
  }
     
- 
-
   render() {
     return (
       <div className="App">

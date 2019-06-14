@@ -21,7 +21,6 @@ const UserName = styled.p`
    margin-left: 10px;
    font-weight: 600;
    font-size: 20px;
-
 `;
 
 const MainImg = styled.div`
@@ -62,7 +61,7 @@ class PostContainer extends Component {
                             <MainImg>
                                 <Main src={post.imageUrl} alt='main-image' />
                             </MainImg>
-                            
+
                             <IconsWrapper>
                                 <Heart className="fas fa-heart fa-2x" ></Heart>
                                 <i className="far fa-comment fa-2x"></i>
@@ -82,8 +81,8 @@ class PostContainer extends Component {
                     return (
                         <>
                             <Header>
-                                <img src={post.thumbnailUrl} alt='profile-pic' />
-                                <h3>{post.username}</h3>
+                                <UserNameImg src={post.thumbnailUrl} alt='profile-pic' />
+                                <UserName>{post.username}</UserName>
                             </Header>
 
                             <Main src={post.imageUrl} alt='main-image' />
@@ -93,9 +92,9 @@ class PostContainer extends Component {
                                 <i className="far fa-comment fa-2x"></i>
                             </IconsWrapper>
                         
-                            <section className='likes'>
+                            <Likes>
                                 {post.likes} likes
-                             </section>
+                             </Likes>
 
                             <CommentSection
                                 comments={post.comments}
