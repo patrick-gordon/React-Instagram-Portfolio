@@ -20,7 +20,7 @@ const NavLeft = styled.div`
 
 const InstagramLogo = styled.i` 
     padding-right: 10px;
-   
+   padding-left: 10px;
     font-weight: 500;
 `;
 
@@ -37,7 +37,9 @@ const NavcenterInput = styled.input`
 `;
 
 const NavRight = styled.i`
-    padding-right:
+   i{
+       padding-right: 20px;
+   }
 
 `;
 

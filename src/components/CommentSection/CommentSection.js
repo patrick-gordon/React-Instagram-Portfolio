@@ -22,6 +22,7 @@ const TimeStamp = styled.p`
     margin-top: 10px;
     font-size: 13px;
     margin-left: 10px;
+    margin-bottom: 5px;
 `;
 
 const CommentInput = styled.form`
@@ -29,6 +30,14 @@ const CommentInput = styled.form`
     width: 100%;
     padding: 10px 10px;
     border-bottom: 2px solid black;
+    overflow: hidden
+`;
+
+const Input = styled.input`
+    width: 100%;
+    height:100%;
+    border: none;
+    
 `;
 class CommentSection extends Component {
     state = {
@@ -64,7 +73,7 @@ class CommentSection extends Component {
 
                 <TimeStamp className='timestamp'>{this.props.timestamp}</TimeStamp>
                 <CommentInput onSubmit={this.addNewComment}>
-                    <input
+                    <Input
                         name='newComment'
                         onChange={this.changeHandler}
                         placeholder='add a comment....'

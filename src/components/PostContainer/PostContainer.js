@@ -48,7 +48,6 @@ const Likes = styled.div`
 `;
 
 class PostContainer extends Component {
-
     render() {
         return (
             <div className='post-container'>
@@ -59,15 +58,16 @@ class PostContainer extends Component {
                                 <UserNameImg src={post.thumbnailUrl} alt='profile-pic' />
                                 <UserName>{post.username}</UserName>
                             </Header>
+
                             <MainImg>
                                 <Main src={post.imageUrl} alt='main-image' />
                             </MainImg>
+                            
                             <IconsWrapper>
                                 <Heart className="fas fa-heart fa-2x" ></Heart>
                                 <i className="far fa-comment fa-2x"></i>
                             </IconsWrapper>
                             
-
                             <Likes>
                                 {post.likes} likes
                              </Likes>
@@ -92,10 +92,7 @@ class PostContainer extends Component {
                                 <Heart className="fas fa-heart fa-2x" ></Heart>
                                 <i className="far fa-comment fa-2x"></i>
                             </IconsWrapper>
-                            
-
-                           
-
+                        
                             <section className='likes'>
                                 {post.likes} likes
                              </section>
