@@ -1,46 +1,26 @@
 import React from 'react';
-import './App.css'
-import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
-import dummyData from './dummyData';
+import { Route, Switch } from 'react-router-dom';
+import Home from './views/Home';
+import SignupForm from './components/Signup/SignupForm';
+import Login from './components/Login/Login';
+import PrivateRoute from './Utils/PrivateRoute'
+import Profile from './components/Profile/Profile';
 
-class App extends React.Component {
- state = {
-     data: [],
-     search: '',
-     filteredPosts: []
-   }
 
-   changeHandler = e => {
-    this.setState({
-        [e.target.name]: e.target.value
-    })
-}
- 
- componentDidMount(){
-    this.setState({ data: dummyData})
- }
 
- searchFilter = e => {
-    const filtered = this.state.data.filter(post => post.username.toLowerCase().includes(e.target.value.toLowerCase()))
-    this.setState({ filteredPosts: filtered})
- }
-    
-  render() {
-    return (
-      <div className="App">
-        <SearchBar 
-        newSearch={this.state.search}
-        searchFilter={this.searchFilter}
-        />
-        <PostContainer 
-        data={this.state.data}
-        filteredPosts={this.state.filteredPosts}
-        searchFilter={this.searchFilter}
-         />
-      </div>
-    )
-  }
+export default function App() {
+  return (
+    <div>
+       <Switch>
+        <Route exact path='/' component={Login}/>
+        <Route path='/signup' component={SignupForm} />
+        <Route path='/feed' component={Home}/>
+        <Route path='/profile' component={Profile} />
+      </Switch>
+    </div>
+  )
 }
 
-export default App;
+
+
+
