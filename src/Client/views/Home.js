@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.css'
 import SearchBar from '../components/SearchBar/SearchBar';
 import PostContainer from '../components/PostContainer/PostContainer';
-import dummyData from '../dummyData';
+import dummyData from '../../dummyData';
 
 class Home extends React.Component {
     state = {
