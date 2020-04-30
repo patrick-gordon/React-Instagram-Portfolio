@@ -12,8 +12,8 @@ export default function App() {
   return (
     <div>
        <Switch>
-        <Route exact path='/' component={Login}/>
-        <Route path='/signup' component={SignupForm} />
+        {/* <Route exact path='/' component={Login}/>
+        <Route path='/signup' component={SignupForm} /> */}
         <Route path='/feed' component={Home}/>
         <Route path='/profile' component={Profile} />
       </Switch>
