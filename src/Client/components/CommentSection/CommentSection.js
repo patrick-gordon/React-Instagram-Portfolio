@@ -38,6 +38,7 @@ const Input = styled.input`
     height:100%;
     border: none;
     text-align: center;
+   
 `;
 class CommentSection extends Component {
     state = {

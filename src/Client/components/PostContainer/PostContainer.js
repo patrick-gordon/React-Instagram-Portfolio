@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.css';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment, faHeart } from '@fortawesome/free-solid-svg-icons'
 
 const Header = styled.div`
     display: flex;
@@ -63,8 +65,9 @@ class PostContainer extends Component {
                             </MainImg>
 
                             <IconsWrapper>
-                                <Heart className="fas fa-heart fa-2x" ></Heart>
-                                <i className="far fa-comment fa-2x"></i>
+                            <FontAwesomeIcon icon={faHeart} />
+                                {/* <i className="far fa-comment fa-2x"></i> */}
+                                <FontAwesomeIcon icon={faComment} />
                             </IconsWrapper>
                             
                             <Likes>
@@ -88,8 +91,9 @@ class PostContainer extends Component {
                             <Main src={post.imageUrl} alt='main-image' />
 
                             <IconsWrapper>
-                                <Heart className="fas fa-heart fa-2x" ></Heart>
-                                <i className="far fa-comment fa-2x"></i>
+                            <FontAwesomeIcon icon={faHeart} />
+                                {/* <i className="far fa-comment fa-2x"></i> */}
+                                <FontAwesomeIcon icon={faComment} />
                             </IconsWrapper>
                         
                             <Likes>
